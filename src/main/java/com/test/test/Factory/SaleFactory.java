@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class SaleFactory {
     private ApplicationContext context;
 
-    public Sale saleByCountr(String countryCode) throws NoSuchFieldException{
+    public Sale saleByCountry(String countryCode) throws NoSuchFieldException{
         try {
             return (Sale) context.getBean(countryCode.toUpperCase());
         } catch (Exception e) {

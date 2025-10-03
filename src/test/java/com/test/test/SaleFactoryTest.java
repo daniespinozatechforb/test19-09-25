@@ -18,28 +18,28 @@ public class SaleFactoryTest {
 
     @Test
     void shouldReturnBrazilSaleAndCalculateVAT() throws NoSuchFieldException {
-        Sale sale = saleFactory.saleByCountr("BR");
+        Sale sale = saleFactory.saleByCountry("BR");
         Assertions.assertTrue(sale instanceof BrazilSale);
         Assertions.assertEquals(112.0, sale.calculatePriceWithVAT(100.0), 0.001);
     }
 
     @Test
     void shouldReturnChileSaleAndCalculateVAT() throws NoSuchFieldException {
-        Sale sale = saleFactory.saleByCountr("CL");
+        Sale sale = saleFactory.saleByCountry("CL");
         Assertions.assertTrue(sale instanceof ChileSale);
         Assertions.assertEquals(119.0, sale.calculatePriceWithVAT(100.0), 0.001);
     }
 
     @Test
     void shouldReturnMexicoSaleAndCalculateVAT() throws NoSuchFieldException {
-        Sale sale = saleFactory.saleByCountr("MX");
+        Sale sale = saleFactory.saleByCountry("MX");
         Assertions.assertTrue(sale instanceof MexicoSale);
         Assertions.assertEquals(116.0, sale.calculatePriceWithVAT(100.0), 0.001);
     }
 
     @Test
     void shouldThrowWhenUnsupportedCountry() {
-        Assertions.assertThrows(NoSuchFieldException.class, () -> saleFactory.saleByCountr("XX"));
+        Assertions.assertThrows(NoSuchFieldException.class, () -> saleFactory.saleByCountry("XX"));
     }
 }
 

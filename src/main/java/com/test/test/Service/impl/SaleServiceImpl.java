@@ -19,7 +19,7 @@ public class SaleServiceImpl implements SaleService {
 
     @Override
     public SaleResponse getTotalPrice(SaleRequest saleRequest) throws NoSuchFieldException {
-        Sale sale = saleFactory.saleByCountr(saleRequest.getCountry());
+        Sale sale = saleFactory.saleByCountry(saleRequest.getCountry());
 
         BigDecimal amount = BigDecimal.valueOf(saleRequest.getAmount()).setScale(2, RoundingMode.HALF_UP);
         BigDecimal finalAmount = BigDecimal
